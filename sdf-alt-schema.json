@@ -1,0 +1,120 @@
+{
+  "title": "Alternative ODM SDF schema (work in progress 20190710)",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "info": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "copyright": {
+          "type": "string"
+        },
+        "license": {
+          "type": "string"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "namespace": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "defaultNamespace": {
+      "type": "string"
+    },
+    "odmObject": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/objectprops"
+      }
+    }
+  },
+  "definitions": {
+    "objectprops": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "id": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "number"
+            }
+          ]
+        },
+        "name": {
+          "type": "string"
+        },
+        "optional": {
+          "type": "boolean"
+        },
+        "odmProperty": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/resprops"
+          }
+        },
+        "odmAction": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/resprops"
+          }
+        },
+        "odmEvent": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/resprops"
+          }
+        }
+      }
+    },
+    "resprops": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "id": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "number"
+            }
+          ]
+        },
+        "name": {
+          "type": "string"
+        },
+        "optional": {
+          "type": "boolean"
+        },
+        "readOnly": {
+          "type": "boolean"
+        },
+        "observable": {
+          "type": "boolean"
+        },
+        "type": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
