@@ -113,6 +113,17 @@
         },
         "type": {
           "type": "string"
+        },
+        "$comment": {
+          "type": "string"
+        },
+        "items": {
+          "type": "object",
+          "properties" : {
+            "type" : {
+              "type": "string"
+            }
+          }
         }
       }
     }
