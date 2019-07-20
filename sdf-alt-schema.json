@@ -1,5 +1,5 @@
 {
-  "title": "Alternative ODM SDF schema (work in progress 20190710)",
+  "title": "Alternative ODM SDF schema (work in progress 20190720)",
   "type": "object",
   "additionalProperties": false,
   "properties": {
@@ -19,7 +19,7 @@
           "type": "string"
         }
       },
-      "required": [],
+      "required": ["title", "version", "copyright", "license"],
       "additionalProperties": false
     },
     "namespace": {
@@ -42,6 +42,7 @@
     "objectprops": {
       "type": "object",
       "additionalProperties": false,
+      "required": ["id"],
       "properties": {
         "description": {
           "type": "string"
@@ -59,8 +60,11 @@
         "name": {
           "type": "string"
         },
-        "optional": {
-          "type": "boolean"
+        "required": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
         "odmProperty": {
           "type": "object",
@@ -85,6 +89,7 @@
     "resprops": {
       "type": "object",
       "additionalProperties": false,
+      "required": ["id"],
       "properties": {
         "description": {
           "type": "string"
@@ -101,9 +106,6 @@
         },
         "name": {
           "type": "string"
-        },
-        "optional": {
-          "type": "boolean"
         },
         "readOnly": {
           "type": "boolean"
