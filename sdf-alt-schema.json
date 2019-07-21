@@ -48,14 +48,8 @@
           "type": "string"
         },
         "id": {
-          "oneOf": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "number"
-            }
-          ]
+              "type": "integer",
+              "minimum": 0
         },
         "name": {
           "type": "string"
@@ -95,14 +89,8 @@
           "type": "string"
         },
         "id": {
-          "oneOf": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "number"
-            }
-          ]
+              "type": "integer",
+              "minimum": 0
         },
         "name": {
           "type": "string"
