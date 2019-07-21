@@ -2,6 +2,7 @@
   "title": "Alternative ODM SDF schema (work in progress 20190720)",
   "type": "object",
   "additionalProperties": false,
+  "required": ["info"],
   "properties": {
     "info": {
       "type": "object",
